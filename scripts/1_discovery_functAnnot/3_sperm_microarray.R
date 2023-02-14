@@ -1,3 +1,17 @@
+############################################################################
+############################################################################
+###########                                                      ###########
+###########                Sperm microarray study                ###########
+###########             Author: Benjamin Planterose              ###########
+###########                                                      ###########
+###########        Erasmus MC University Medical Centre          ###########
+###########               Rotterdam, The Netherlands             ###########
+###########                                                      ###########
+###########           b.planterosejimenez@erasmusmc.nl           ###########
+###########                                                      ###########
+############################################################################
+############################################################################
+
 library(data.table)
 library(GEOquery)
 library(minfi)
@@ -78,23 +92,23 @@ SP[91:100,]
 
 
 
-# setwd('/media/ultron/2tb_disk1/ben/JRC_project/bed_files/sperm_EPIC/GSE185445_RAW/')
-# rgSet = read.metharray.exp(getwd(), extended = F)
-# beta = preprocessQuantile(rgSet)
-# beta = getBeta(beta)
-# raw = preprocessRaw(rgSet)
-# M = getMeth(raw)
-# U = getUnmeth(raw)
-# 
-# setwd('/media/ultron/2tb_disk1/ben/JRC_project/bed_files/sperm_EPIC/PROCESSED/')
-# UMtools::export_bigmat(M, 'M.txt', 4)
-# UMtools::export_bigmat(U, 'U.txt', 4)
-# UMtools::export_bigmat(round(beta, 5), 'beta.txt', 4)
+setwd('/media/ultron/2tb_disk1/ben/JRC_project/bed_files/sperm_EPIC/GSE185445_RAW/')
+rgSet = read.metharray.exp(getwd(), extended = F)
+beta = preprocessQuantile(rgSet)
+beta = getBeta(beta)
+raw = preprocessRaw(rgSet)
+M = getMeth(raw)
+U = getUnmeth(raw)
 
 setwd('/media/ultron/2tb_disk1/ben/JRC_project/bed_files/sperm_EPIC/PROCESSED/')
-M = UMtools::import_bigmat('2022-10-12_M.txt')
-U = UMtools::import_bigmat('2022-10-12_U.txt')
-beta = UMtools::import_bigmat('2022-10-12_beta.txt')
+UMtools::export_bigmat(M, 'M.txt', 4)
+UMtools::export_bigmat(U, 'U.txt', 4)
+UMtools::export_bigmat(round(beta, 5), 'beta.txt', 4)
+
+# setwd('/media/ultron/2tb_disk1/ben/JRC_project/bed_files/sperm_EPIC/PROCESSED/')
+# M = UMtools::import_bigmat('2022-10-12_M.txt')
+# U = UMtools::import_bigmat('2022-10-12_U.txt')
+# beta = UMtools::import_bigmat('2022-10-12_beta.txt')
 
 ######## GEO
 setwd('/media/ultron/2tb_disk1/ben/JRC_project/bed_files/sperm_EPIC/')

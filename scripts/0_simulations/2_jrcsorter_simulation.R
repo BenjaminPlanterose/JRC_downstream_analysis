@@ -1,3 +1,17 @@
+############################################################################
+############################################################################
+###########                                                      ###########
+###########                  Simulation study 2                  ###########
+###########             Author: Benjamin Planterose              ###########
+###########                                                      ###########
+###########        Erasmus MC University Medical Centre          ###########
+###########               Rotterdam, The Netherlands             ###########
+###########                                                      ###########
+###########           b.planterosejimenez@erasmusmc.nl           ###########
+###########                                                      ###########
+############################################################################
+############################################################################
+
 ## Load libraries
 library(gplots)
 library(data.table)
@@ -252,6 +266,4 @@ saveRDS(RES.m, paste(format(Sys.time(), '%Y%m%d'), 'simulation_results.Rds', sep
 # 2. Epsilon set for generation is also epsilon set for likelihood. This is not necesarily the case.
 # 3. Count distribution follows a Poisson distribution independent of bin and individual. This is unlikely the case.
 # 4. Performance is measured on equal number of M1, M2, M3, M4, M5 cases. We don´t expect similar proportions in practice. M1 >> M5 > M3, M4 > M2
-# 5. 
-
 
