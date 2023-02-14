@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Info: IGV exports png's at low resolution. To solve this issue, export IGV screenshots in svg and convert into png with the following script.
+# Dependencies: Inkscape
+# Aim: Convert all svg files in the present directory to PNG.
+# Adapted from matsen: https://gist.github.com/matsen/4263955
+
+for i in $(ls *.svg | cut -d. -f1); do
+  inkscape --without-gui --export-png="${i}.png" --export-dpi 300 --export-area-drawing ${i}.svg
+done
